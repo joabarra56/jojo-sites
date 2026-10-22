@@ -1,2 +1,123 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JOJO Village</title><meta name="robots" content="noindex"></head>
-<body style="font:16px system-ui;max-width:640px;margin:40px auto;padding:0 16px"><h1>JOJO Village</h1><p>Pré-visualizações de sites preparadas por Joaquim.</p></body></html>
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Joaquim · Sites para negócios locais</title>
+<meta name="description" content="Sites feitos à medida para restaurantes, hotéis e barbearias na zona de Lisboa e Cascais. Só paga depois de aprovar o site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap">
+<style>
+/* Portefólio de estúdio : grande título, trabalhos em cartões de pré-visualização, preço claro, contacto direto. */
+:root{
+  --paper:#f2efe8; --ink:#16181d; --muted:#5d6068; --line:#d6d2c8; --tile:#1d4e89; --sun:#e8a33d;
+  --display:"Bricolage Grotesque",system-ui,-apple-system,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{--paper:#121418;--ink:#eeeae2;--muted:#a3a6ad;--line:#2c2f36;--tile:#6f9fd8;--sun:#f0b65a;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:19px/1.6 var(--body)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--tile);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);line-height:.98;margin:0;text-wrap:balance;letter-spacing:-.02em}
+.eyebrow{font:700 13px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--tile)}
+header{padding-block:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid var(--line)}
+header b{font:800 20px var(--display)}
+.btn{display:inline-block;font:700 15px var(--display);padding:13px 20px;border:2px solid var(--ink);text-decoration:none;transition:background .2s,color .2s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:var(--tile);border-color:var(--tile)}
+.hero{padding-block:72px 64px}
+.hero h1{font-size:clamp(48px,9vw,128px);font-weight:800;max-width:11ch}
+.hero h1 em{font-family:var(--body);font-style:italic;font-weight:400;color:var(--tile)}
+.hero p{font-size:clamp(20px,2.2vw,26px);max-width:36ch;margin:28px 0 0;color:var(--muted)}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+section{padding-block:72px;border-top:1px solid var(--line)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.head h2{font-size:clamp(36px,5vw,64px);font-weight:800}
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{text-decoration:none;display:grid;gap:14px}
+.frame{aspect-ratio:4/5;border:1px solid var(--line);overflow:hidden;position:relative;background:var(--ink)}
+.frame iframe{position:absolute;top:0;left:0;width:390px;height:487px;border:0;transform-origin:0 0;pointer-events:none}
+.card h3{font-size:26px}
+.card p{margin:0;color:var(--muted);font-size:17px}
+.tag{font:700 12px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.card:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
+.steps div{border-top:3px solid var(--ink);padding-top:14px;counter-increment:s}
+.steps div::before{content:counter(s);font:800 40px var(--display);color:var(--tile);display:block;margin-bottom:6px}
+.steps h3{font-size:22px;margin-bottom:6px}
+.steps p{margin:0;color:var(--muted);font-size:17px}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
+.prices div{padding:28px;border-right:1px solid var(--line)}
+.prices div:last-child{border-right:0}
+.prices b{display:block;font:800 clamp(44px,5vw,64px)/1 var(--display);margin:10px 0}
+.prices p{margin:0;color:var(--muted);font-size:17px}
+.note{margin-top:18px;color:var(--muted);font-size:17px}
+.contact{background:var(--ink);color:var(--paper);border:0}
+.contact h2{font-size:clamp(40px,6vw,84px);font-weight:800;max-width:14ch}
+.contact .mail{font:700 clamp(20px,3vw,32px) var(--display);word-break:break-all;display:inline-block;margin-top:24px;color:var(--sun)}
+.contact p{color:#b9bcc4;max-width:44ch}
+footer{padding-block:24px;font-size:15px;color:var(--muted)}
+@media (max-width:860px){.work,.prices{grid-template-columns:1fr}.prices div{border-right:0;border-bottom:1px solid var(--line)}.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}section{padding-block:56px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><b>Joaquim · Sites</b><a class="btn" href="#contacto">Falar comigo</a></header>
+
+<div class="hero">
+  <span class="eyebrow">Lisboa · Cascais · Oeiras · Sintra</span>
+  <h1>Sites que dão vontade de <em>entrar.</em></h1>
+  <p>Faço sites à medida para restaurantes, hotéis e barbearias. Preparo o seu com as suas fotos, mostro-lho, e só paga se gostar.</p>
+  <div class="row"><a class="btn solid" href="#trabalhos">Ver exemplos</a><a class="btn" href="#precos">Preços</a></div>
+</div>
+
+<section id="trabalhos">
+  <div class="head"><h2>Exemplos de estilo</h2><span class="tag">Projetos de demonstração · marcas fictícias</span></div>
+  <div class="work">
+    <a class="card" href="demo-salitre/" target="_blank" rel="noopener"><div class="frame"><iframe src="demo-salitre/" title="Pré-visualização Salitre" loading="lazy" tabindex="-1"></iframe></div><span class="tag">Restaurante de autor</span><h3>Salitre</h3><p>Livro de cozinha português, azulejos que se viram, menu de degustação.</p></a>
+    <a class="card" href="demo-casa-moura/" target="_blank" rel="noopener"><div class="frame"><iframe src="demo-casa-moura/" title="Pré-visualização Casa Moura" loading="lazy" tabindex="-1"></iframe></div><span class="tag">Hotel</span><h3>Casa Moura</h3><p>Ambiente de cinema, mar em movimento ao luar, suites em película.</p></a>
+    <a class="card" href="demo-lume/" target="_blank" rel="noopener"><div class="frame"><iframe src="demo-lume/" title="Pré-visualização LUME" loading="lazy" tabindex="-1"></iframe></div><span class="tag">Marca premium · 3D</span><h3>LUME GT-01</h3><p>Carro em 3D que roda com o scroll, configurador de cor.</p></a>
+  </div>
+</section>
+
+<section>
+  <div class="head"><h2>Como funciona</h2></div>
+  <div class="steps">
+    <div><h3>Preparo</h3><p>Faço uma pré-visualização do seu site com as suas fotos e informações públicas.</p></div>
+    <div><h3>Vê</h3><p>Abre o link no telemóvel e diz-me o que gosta e o que quer mudar.</p></div>
+    <div><h3>Ajusto</h3><p>Duas séries de correções incluídas, com os seus textos, menu e logótipo.</p></div>
+    <div><h3>Só depois paga</h3><p>Paga por transferência apenas quando aprovar o site final.</p></div>
+  </div>
+</section>
+
+<section id="precos">
+  <div class="head"><h2>Preços</h2></div>
+  <div class="prices">
+    <div><span class="tag">Barbearia · salão</span><b>25 €</b><p>Página com serviços, preços, horário, WhatsApp e mapa.</p></div>
+    <div><span class="tag">Restaurante · tasca</span><b>80 €</b><p>Site completo com fotos, especialidades, horário, reservas por telefone ou WhatsApp.</p></div>
+    <div><span class="tag">Hotel · alojamento</span><b>80 €</b><p>Quartos, serviços, localização e contacto direto para reservas sem comissão.</p></div>
+  </div>
+  <p class="note">Prazo indicativo: 3 a 5 dias úteis depois de receber os conteúdos. Domínio (.pt ou .com) pago à parte.</p>
+</section>
+</div>
+
+<section class="contact" id="contacto"><div class="wrap">
+  <span class="eyebrow" style="color:var(--sun)">Contacto</span>
+  <h2>Quer ver o site do seu negócio?</h2>
+  <p>Diga-me o nome do seu restaurante, hotel ou barbearia. Preparo a pré-visualização e envio-lha sem compromisso.</p>
+  <a class="mail" href="mailto:joaquimbarra12@gmail.com">joaquimbarra12@gmail.com</a>
+</div></section>
+
+<div class="wrap"><footer>Joaquim · estudante em Cascais · sites para negócios locais</footer></div>
+<script>
+// met chaque aperçu à l'échelle de sa carte (iframe de 390 px de large)
+function fit(){document.querySelectorAll('.frame').forEach(function(f){var i=f.querySelector('iframe');i.style.transform='scale('+(f.clientWidth/390)+')';i.style.height=(f.clientHeight*390/f.clientWidth)+'px'})}
+addEventListener('resize',fit);fit();
+</script>
+</body>
+</html>
