@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Navalha · Barbearia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Inter+Tight:wght@400;600&display=swap">
+<style>
+/* Direção « brut e urbano » : blocos cheios, tipografia condensada enorme, tabela de preços gigante, um vermelho de poste de barbeiro. */
+:root{
+  --concrete:#e7e4df; --black:#111111; --white:#fbfaf7; --red:#d2321e; --grey:#77736d; --line:#c9c5bf;
+  --display:"Anton","Impact","Arial Narrow",sans-serif;
+  --mono:"Space Mono",ui-monospace,Menlo,monospace;
+  --body:"Inter Tight",system-ui,-apple-system,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--concrete);color:var(--black);font:17px/1.55 var(--body)}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h1,h2{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.86;margin:0;letter-spacing:.005em}
+.mono{font:700 12px var(--mono);letter-spacing:.14em;text-transform:uppercase}
+nav{display:flex;justify-content:space-between;align-items:center;padding-block:18px;border-bottom:3px solid var(--black)}
+nav b{font:400 28px var(--display);letter-spacing:.04em}
+.book{font:700 13px var(--mono);letter-spacing:.12em;text-transform:uppercase;background:var(--black);color:var(--white);padding:12px 18px;text-decoration:none;border:3px solid var(--black)}
+.book:hover{background:var(--red);border-color:var(--red)}
+.hero{display:grid;grid-template-columns:1.3fr .7fr;border-bottom:3px solid var(--black)}
+.hero .l{padding-block:40px;padding-right:24px;border-right:3px solid var(--black)}
+.hero h1{font-size:clamp(88px,17vw,250px)}
+.hero h1 span{color:var(--red)}
+.hero p{font-size:20px;max-width:30ch;margin:22px 0 0}
+.pole{position:relative;overflow:hidden;background:var(--white);min-height:320px}
+.pole::before{content:"";position:absolute;inset:-50% -50%;background:repeating-linear-gradient(135deg,var(--red) 0 36px,var(--white) 36px 72px,#1d3a8a 72px 108px,var(--white) 108px 144px);animation:spin 6s linear infinite}
+.pole::after{content:"FOTO DA CADEIRA";position:absolute;left:12px;bottom:12px;font:700 11px var(--mono);letter-spacing:.14em;background:var(--black);color:var(--white);padding:6px 8px}
+@keyframes spin{to{transform:translateY(144px)}}
+@media (prefers-reduced-motion:reduce){.pole::before{animation:none}}
+.marquee{background:var(--black);color:var(--white);overflow:hidden;white-space:nowrap;border-bottom:3px solid var(--black)}
+.marquee div{display:inline-block;padding:12px 0;font:400 28px var(--display);letter-spacing:.06em;animation:mq 22s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee div{animation:none}}
+section{padding-block:64px;border-bottom:3px solid var(--black)}
+.prices h2{font-size:clamp(56px,10vw,140px);margin-bottom:24px}
+table{width:100%;border-collapse:collapse}
+td{padding:18px 0;border-top:2px solid var(--black);vertical-align:baseline}
+td:first-child{font:400 clamp(30px,4.5vw,56px)/1 var(--display);text-transform:uppercase}
+td:nth-child(2){color:var(--grey);font-size:15px;padding-inline:16px}
+td:last-child{text-align:right;font:700 clamp(24px,3.5vw,40px) var(--mono);white-space:nowrap}
+tr:hover td:first-child{color:var(--red)}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.info div{padding:24px;border:3px solid var(--black);margin:-1.5px;background:var(--white)}
+.info h3{font:400 34px var(--display);text-transform:uppercase;margin:8px 0}
+.info p{margin:0;font-family:var(--mono);font-size:15px}
+.cta{background:var(--red);color:var(--white)}
+.cta h2{font-size:clamp(60px,11vw,160px)}
+.cta .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.cta .book{background:var(--white);color:var(--black);border-color:var(--white)}
+.cta .book:hover{background:var(--black);color:var(--white);border-color:var(--black)}
+footer{padding-block:20px;font:12px var(--mono);color:var(--grey)}
+@media (max-width:820px){.hero{grid-template-columns:1fr}.hero .l{border-right:0;border-bottom:3px solid var(--black);padding-right:0}.info{grid-template-columns:1fr}td:nth-child(2){display:none}}
+</style>
+</head>
+<body>
+<div class="wrap"><nav><b>NAVALHA</b><a class="book" href="#marcar">Marcar</a></nav></div>
+<div class="wrap hero">
+  <div class="l">
+    <span class="mono">Barbearia · Cascais</span>
+    <h1>Corte<br><span>limpo.</span></h1>
+    <p>Corte, barba à navalha e toalha quente. Sem pressas, sem conversa fiada.</p>
+  </div>
+  <div class="pole" aria-hidden="true"></div>
+</div>
+<div class="marquee" aria-hidden="true"><div>CORTE · BARBA · NAVALHA · TOALHA QUENTE · CORTE · BARBA · NAVALHA · TOALHA QUENTE · CORTE · BARBA · NAVALHA · TOALHA QUENTE · CORTE · BARBA · NAVALHA · TOALHA QUENTE ·&nbsp;</div></div>
+<div class="wrap">
+<section class="prices">
+  <span class="mono">Tabela</span>
+  <h2>Preços</h2>
+  <table>
+    <tr><td>Corte</td><td>Máquina e tesoura, lavagem incluída</td><td>12 €</td></tr>
+    <tr><td>Barba</td><td>Navalha, toalha quente, óleo</td><td>8 €</td></tr>
+    <tr><td>Corte + barba</td><td>O serviço completo</td><td>18 €</td></tr>
+    <tr><td>Criança</td><td>Até aos 12 anos</td><td>9 €</td></tr>
+  </table>
+</section>
+<section>
+  <div class="info">
+    <div><span class="mono">Horário</span><h3>Ter – Sáb</h3><p>10:00 – 20:00<br>Domingo e segunda fechado</p></div>
+    <div><span class="mono">Morada</span><h3>Centro</h3><p>Rua exemplo, 12<br>2750 Cascais</p></div>
+    <div><span class="mono">Pagamento</span><h3>MB · Cartão</h3><p>Multibanco, cartão ou numerário</p></div>
+  </div>
+</section>
+</div>
+<section class="cta" id="marcar"><div class="wrap">
+  <span class="mono">Marcações</span>
+  <h2>Marca já.</h2>
+  <div class="row"><a class="book" href="https://wa.me/351900000000">WhatsApp</a><a class="book" href="tel:+351900000000">Ligar</a></div>
+</div></section>
+<div class="wrap"><footer>Demonstração JOJO Village · barbearia fictícia · preços e morada de exemplo</footer></div>
+</body>
+</html>
